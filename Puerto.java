@@ -14,15 +14,15 @@ public class Puerto
      */
     public Puerto()
     {
-        amarres = Alquiler[4];
+        amarres = new Alquiler[4];
     }
 
     public float alquilarAmarre(int numDias , Barco barco){
         float precio = -1;
+        int posicionLibre = posicionPrimerAmarreLibre();
         if(hayAmarresLibres()){
-            int posicionPrimerAmarreLibre = posicionPrimerAmarreLibre();
-            Alquiler nuevoAlquiler = new Alquiler(numDias, barco , posicionPrimerAmarreLibre);
-            amarres[posicionPrimerAmarreLibre] = nuevoAlquiler;
+            Alquiler nuevoAlquiler = new Alquiler(numDias, barco, posicionLibre);
+            amarres[posicionLibre] = nuevoAlquiler;
             precio = nuevoAlquiler.getPrecioAlquiler();
         }
         return precio;
@@ -30,18 +30,16 @@ public class Puerto
 
     public float liquidarAlquilerAmarre(int posicionAmarre){
         float precio = -1;
-        if(posicionAmarre > 0 && posicionAmarre < amarres.length){
-            if(amarres[posicionAmarre] != null){
+        if(posicionAmarre >= 0 && posicionAmarre < amarres.length && amarres[posicionAmarre] != null){
                 precio = amarres[posicionAmarre].getPrecioAlquiler();
                 amarres[posicionAmarre] = null;
-            }
         }
         return precio;
     }
 
     public void verEstadoAmarres(){
-        for(int posicion ;posicion < amarres.length;posicion++){
-            if(amarres[posicion] != null){
+        for(int posicion = 0 ;posicion < amarres.length;posicion++){
+            if(amarres[posicion] == null){
                 System.out.println("El amarre " + posicion + " esta libre.");
             }
             else{
@@ -52,20 +50,26 @@ public class Puerto
 
     private int posicionPrimerAmarreLibre(){
         int posicion = -1;
-        for(int index = 0;index < amarres.length ; index++){
+        boolean parado = false;
+        int index = 0;
+        while(parado == false && index < amarres.length){
             if(amarres[index] == null){
                 posicion = index;
+                parado = true;
             }
+            index++;
         }
         return posicion;
     }
 
     private boolean hayAmarresLibres(){
         boolean libre = false;
-        for(int contador = 0; contador < amarres.length() ;contador++){
-            if(amarre[contador] != null){
+        int contador = 0;
+        while(!libre && contador < amarres.length){
+            if(amarres[contador] == null){
                 libre = true;
             }
+            contador++;
         }
         return libre;
     }

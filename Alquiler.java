@@ -12,6 +12,7 @@ public class Alquiler
     static final int VALOR_MULTIPLICADOR_BERNUA = 300;
     private int numDias;
     private int posicionAmarre;
+    private Barco barco;
     
     /**
      * Constructor for objects of class Alquiler
@@ -20,6 +21,7 @@ public class Alquiler
     {
         this.numDias = numDias;
         this.posicionAmarre = posicionAmarre;
+        this.barco = barco;
     }
 
     public String toString()
@@ -31,7 +33,7 @@ public class Alquiler
     
     public float getPrecioAlquiler(){
         float precio = -1;
-        precio = numDias + (barco.getEslora() * VALOR_MULTIPLICADOR_ESLORA) +(VALOR_MULTIPLICADOR_BERNUA *barco.getCoeficienteDeBernua());
+        precio = (numDias * VALOR_MULTIPLICADOR_ESLORA * (float)barco.getEslora()) + (VALOR_MULTIPLICADOR_BERNUA * barco.getCoeficienteBernua());;
         return precio;
     }
 }
