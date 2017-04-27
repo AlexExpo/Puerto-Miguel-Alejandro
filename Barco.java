@@ -1,4 +1,9 @@
-
+/**
+* Representa un Barco que tendra, ademas de su informacion general
+* un propietario de tipo Persona.
+* @author Miguel RG.
+* @version 27/04/2017.
+*/
 
 public abstract class Barco
 {
@@ -11,6 +16,13 @@ public abstract class Barco
     
     private Persona propietario;
 
+    /**
+     * Constructor de la clase Barco.
+     * @param matricula La matricula del Barco.
+     * @param eslora la eslora del Barco.
+     * @param annoFabricacion el año en el que se fabrico el Barco.
+     * @param propietario Persona a la que pertenece el Barco.
+     */
     public Barco(String matricula, double eslora, int annoFabricacion, Persona propietario)
     {
         this.matricula = matricula;
@@ -19,6 +31,11 @@ public abstract class Barco
         this.propietario = propietario;
     }
 
+    /**
+     * Devuelve una cadena de String con todos 
+     * los datos de los atributos de la clase Barco.
+     * @return String con los atributos del Barco.
+     */
     public String toString()
     {
         String cadenaADevolver = "";
@@ -31,11 +48,20 @@ public abstract class Barco
         return cadenaADevolver;
     }
     
+    /**
+     * Devuelve la eslora del Barco.
+     * @return Double con la eslora del Barco.
+     */
     public double getEslora()
     {
         return eslora;
     }
     
+    /**
+     * Metodo abstracto que sera sobrescrito por 
+     * las clases hijas de Barco.
+     * @return Entero que depende del barco sobre el que se aplique el metodo.
+     */
     abstract int getCoeficienteBernua();
     
 }
