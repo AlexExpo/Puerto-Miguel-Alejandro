@@ -44,6 +44,7 @@ public class Puerto
             }
             else{
                 System.out.println("Este amarre se encuentra ocupado");
+                System.out.println(amarres[posicion].toString());
             }
         }
     }
