@@ -1,6 +1,6 @@
 /**
  * Clase que representa una embarcacion con motor y no con mastiles.
- * @author Miguel RG.
+ * @author Alejandro Exposito.
  * @version 27/04/2017.
  */
 

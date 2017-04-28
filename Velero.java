@@ -1,6 +1,6 @@
 /**
  * Barco de tipo Velero que ademas de los atributos de un Barco generico tiene mastiles.
- * @author Miguel RG.
+ * @author Alejandro Exposito.
  * @Version 27/04/2017.
  */
 

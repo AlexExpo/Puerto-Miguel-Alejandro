@@ -1,6 +1,6 @@
 /**
  * Clase Persona que representa a los humanos que poseen un Barco.
- * @author Miguel RG.
+ * @author Alejandro Exposito.
  * @version 27/04/2017.
  */
 

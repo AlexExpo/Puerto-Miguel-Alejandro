@@ -1,6 +1,6 @@
 /**
  * Clase yate que pertenece a EmbarcacionAMotor , añadiendo ademas camarotes.
- * @author Miguel RG.
+ * @author Alejandro Exposito.
  * @version 27/04/2017.
  */
 

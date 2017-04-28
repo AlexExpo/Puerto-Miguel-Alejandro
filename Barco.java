@@ -1,7 +1,7 @@
 /**
 * Representa un Barco que tendra, ademas de su informacion general
 * un propietario de tipo Persona.
-* @author Miguel RG.
+* @author Alejandro Exposito.
 * @version 27/04/2017.
 */
 
@@ -9,11 +9,8 @@ public abstract class Barco
 {
     
     private String matricula;
-    
     private double eslora;
-    
     private int annoFabricacion;
-    
     private Persona propietario;
 
     /**

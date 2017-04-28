@@ -74,7 +74,7 @@ public class Puerto
 
     /**
      * Metodo que devuelve la posicion del
-     * primer amarres que se encuentre disponible.
+     * primer amarre que se encuentre disponible.
      * En caso de no haber un amarre libre, el 
      * metodo devuelve -1.
      * @return posicion del primer amarre libre encontrado.
